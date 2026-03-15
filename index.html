@@ -30,6 +30,10 @@
       overflow-x: hidden;
     }
 
+    body {
+      position: relative;
+    }
+
     body::before {
       content: "";
       position: fixed;
@@ -39,7 +43,7 @@
         radial-gradient(900px 600px at 85% 25%, rgba(120, 90, 200, 0.22), transparent 60%),
         radial-gradient(600px 400px at 50% 90%, rgba(80, 160, 200, 0.18), transparent 70%),
         linear-gradient(180deg, var(--bg-mid), var(--bg-deep));
-      z-index: -3;
+      z-index: -1;
     }
 
     .aurora {
@@ -52,7 +56,7 @@
       filter: blur(12px) saturate(1.1);
       opacity: 0.7;
       animation: auroraShift 18s ease-in-out infinite alternate;
-      z-index: -2;
+      z-index: 0;
       pointer-events: none;
       mix-blend-mode: screen;
     }
@@ -62,10 +66,12 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      z-index: -2;
+      z-index: 0;
     }
 
     .wrap {
+      position: relative;
+      z-index: 1;
       max-width: 1100px;
       margin: 0 auto;
       padding: 56px 24px 80px;
@@ -229,10 +235,6 @@
           We craft atmospheric, mechanics-first games with bold art direction and
           satisfying feedback loops. Our next universe is already taking shape.
         </p>
-        <div class="cta-row">
-          <a class="cta primary" href="mailto:hello@electrongamestudios.com">Contact us</a>
-          <a class="cta secondary" href="mailto:press@electrongamestudios.com">Press kit</a>
-        </div>
       </div>
       <div class="panel">
         <h3>Now Building</h3>
@@ -259,8 +261,7 @@
     </section>
 
     <footer>
-      <div>© 2026 Electron Game Studios</div>
-      <div class="tiny">For business inquiries: hello@electrongamestudios.com</div>
+      <div>&copy; 2026 Electron Game Studios</div>
     </footer>
   </div>
 
