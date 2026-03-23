@@ -5,73 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy - Electron Game Studios</title>
   <meta name="description" content="Privacy Policy for Electron Game Studios mobile games.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #06080d;
-      --panel: #0f1420;
-      --text: #f6f7fb;
-      --muted: #a9b2c5;
-      --accent: #6cf1ff;
-      --border: rgba(130, 160, 220, 0.18);
+      --bg-deep: #0a0a1e;
+      --bg-mid: #12103a;
+      --text: #e8e8f0;
+      --muted: #8888bb;
+      --cyan: #00e5ff;
+      --yellow: #ffd700;
+      --purple: #9b4dff;
+      --card-bg: rgba(16, 14, 50, 0.85);
+      --border: #2a2a5e;
+      --glow-cyan: rgba(0, 229, 255, 0.4);
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Space Grotesk", "Futura", "Segoe UI", sans-serif;
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: "Courier New", "Consolas", monospace;
       color: var(--text);
-      background: radial-gradient(1200px 700px at 15% 10%, #13203a 0%, transparent 60%), var(--bg);
-      line-height: 1.65;
+      background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 50%, #0d0820 100%);
+      overflow-x: hidden;
     }
+
+    /* CRT scanline overlay */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 2px,
+        rgba(0, 0, 0, 0.15) 4px
+      );
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Pixel grid pattern */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(40, 40, 100, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(40, 40, 100, 0.08) 1px, transparent 1px);
+      background-size: 16px 16px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
     .wrap {
+      position: relative;
+      z-index: 1;
       max-width: 900px;
       margin: 0 auto;
-      padding: 48px 22px 80px;
+      padding: 40px 20px 60px;
     }
+
     header {
-      margin-bottom: 28px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid var(--border);
     }
-    a {
-      color: var(--accent);
+
+    header a {
+      font-family: "Press Start 2P", monospace;
+      font-size: 10px;
+      color: var(--cyan);
       text-decoration: none;
+      text-shadow: 0 0 8px var(--glow-cyan);
     }
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px;
-      margin: 16px 0;
+
+    header a:hover {
+      text-shadow: 0 0 15px var(--glow-cyan);
     }
+
     h1 {
-      margin: 0 0 8px;
-      font-size: clamp(28px, 4vw, 42px);
+      font-family: "Press Start 2P", monospace;
+      font-size: clamp(12px, 3vw, 20px);
+      color: var(--cyan);
+      text-shadow: 0 0 12px var(--glow-cyan);
+      margin: 12px 0 8px;
+      line-height: 1.6;
     }
-    h2 {
-      margin: 18px 0 8px;
-      font-size: 18px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+
+    .date {
+      font-size: 12px;
       color: var(--muted);
     }
+
+    .card {
+      background: var(--card-bg);
+      border: 3px solid var(--border);
+      padding: 20px;
+      margin: 16px 0;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover {
+      border-color: var(--purple);
+    }
+
+    h2 {
+      font-family: "Press Start 2P", monospace;
+      font-size: 9px;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 12px;
+      text-shadow: 0 0 6px rgba(255, 215, 0, 0.3);
+    }
+
     p {
       margin: 8px 0 0;
       color: var(--text);
+      line-height: 1.7;
+      font-size: 14px;
     }
-    ul {
-      margin: 8px 0 0 18px;
-      padding: 0;
-      color: var(--text);
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
     }
-    .muted {
+
+    a:hover {
+      text-shadow: 0 0 8px var(--glow-cyan);
+    }
+
+    .footer-note {
       color: var(--muted);
+      font-size: 12px;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 3px solid var(--border);
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="muted">Electron Game Studios</div>
+      <a href="index.html">&lt; Back to Home</a>
       <h1>Privacy Policy</h1>
-      <div class="muted">Effective date: March 15, 2026</div>
+      <div class="date">Effective date: March 15, 2026</div>
     </header>
 
     <div class="card">
@@ -143,7 +223,7 @@
       </p>
     </div>
 
-    <div class="muted">
+    <div class="footer-note">
       This policy may be updated from time to time. We will post changes on this page.
     </div>
   </div>
