@@ -270,6 +270,41 @@
       box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
     }
 
+    .game-hero {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .game-icon {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--border);
+      background: #0b0b22;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+      flex: 0 0 auto;
+    }
+
+    .game-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .game-card.cyberpunk .game-icon {
+      border-color: var(--cyan);
+      box-shadow: 0 0 14px rgba(0, 229, 255, 0.35);
+    }
+
+    .game-card.gothic .game-icon {
+      border-color: var(--purple);
+      box-shadow: 0 0 14px rgba(155, 77, 255, 0.35);
+    }
+
     .game-card .tag {
       font-family: "Press Start 2P", monospace;
       font-size: 7px;
@@ -304,7 +339,6 @@
       font-size: 7px;
       color: var(--muted);
       text-transform: uppercase;
-      margin-bottom: 14px;
     }
 
     .game-card p {
@@ -399,6 +433,14 @@
       .grid {
         grid-template-columns: 1fr;
       }
+      .game-hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .game-icon {
+        width: 96px;
+        height: 96px;
+      }
     }
 
     /* Pixel star animation */
@@ -433,10 +475,17 @@
     <section class="games-section">
       <h2><span class="blink">></span> Our Games</h2>
       <div class="game-cards">
-        <div class="game-card">
+        <div class="game-card cyberpunk">
           <span class="tag cyberpunk">Cyberpunk</span>
-          <h3>Neon 21: Blackjack Roguelike</h3>
-          <div class="genre">Card Battler / Deck Builder</div>
+          <div class="game-hero">
+            <div class="game-icon">
+              <img src="assets/neon_21_app_icon.png" alt="Neon 21 app icon">
+            </div>
+            <div>
+              <h3>Neon 21: Blackjack Roguelike</h3>
+              <div class="genre">Card Battler / Deck Builder</div>
+            </div>
+          </div>
           <p>
             The house always wins. Prove it wrong. Fuse blackjack with roguelike
             deck-building across a branching three-act cyberpunk campaign.
@@ -451,10 +500,17 @@
             <a href="https://play.google.com/store/apps/details?id=com.neon.blackjack.blackjack_roguelike" class="cta secondary" style="font-size: 8px; padding: 10px 16px; display: inline-block;">Google Play</a>
           </p>
         </div>
-        <div class="game-card">
+        <div class="game-card gothic">
           <span class="tag gothic">Gothic Lo-Fi</span>
-          <h3>Cathedral Collapse</h3>
-          <div class="genre">Block Puzzle / Roguelike</div>
+          <div class="game-hero">
+            <div class="game-icon">
+              <img src="assets/cathedral_collapse_app_icon.png" alt="Cathedral Collapse app icon">
+            </div>
+            <div>
+              <h3>Cathedral Collapse</h3>
+              <div class="genre">Block Puzzle / Roguelike</div>
+            </div>
+          </div>
           <p>
             A block puzzle roguelike with adventure mode, cascading combos,
             and chill lo-fi atmosphere. Simple to learn, deep to master.
