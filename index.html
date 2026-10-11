@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Electron Game Studios</title>
-  <meta name="description" content="Indie game studio crafting retro-inspired, pixel-perfect experiences.">
+  <meta name="description" content="Explore Electron Game Studios games: Neon 21, Cathedral Collapse, Cascade Blast, The Casebook, and Color Merge. Veilborn is coming soon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -251,7 +251,7 @@
 
     .game-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
       gap: 20px;
       margin-bottom: 48px;
     }
@@ -372,8 +372,27 @@
       top: 3px;
     }
 
-    .game-card:nth-child(2) ul li::before {
+    .game-card.gothic ul li::before {
       color: var(--purple);
+    }
+
+    .section-intro { text-align: center; color: var(--muted); line-height: 1.8; margin: -8px auto 24px; }
+    .game-card { display: flex; flex-direction: column; }
+    .game-card .genre { line-height: 1.8; }
+    .card-labels { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .game-card .tag { border: 2px solid var(--cyan); color: var(--cyan); line-height: 1.7; }
+    .game-card .tag.gothic { border-color: var(--purple); color: #bd8aff; }
+    .status { color: var(--cyan); font-size: 11px; line-height: 1.7; padding: 6px 0; }
+    .status.upcoming { color: var(--yellow); }
+    .game-card .game-links { margin-top: auto; padding-top: 20px; margin-bottom: 0; }
+    .game-links .cta { font-size: 8px; padding: 10px 16px; line-height: 1.8; }
+    .game-card .release-note { margin-top: 16px; color: var(--yellow); }
+    .text-link { color: var(--cyan); font-size: 12px; margin-top: 20px; line-height: 1.8; }
+    .upcoming-games { grid-template-columns: 1fr; }
+    a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 5px; }
+    @media (prefers-reduced-motion: reduce) {
+      .blink { animation: none; }
+      .cta, .panel, .game-card { transition: none; }
     }
 
     /* Pixel divider */
@@ -468,22 +487,20 @@
       <h1>Small team. Big retro ideas.</h1>
       <p class="lead">
         We build mechanics-first mobile games that blend classic genres
-        with roguelike depth. Strategy, puzzles, and pixel soul.
+        with fresh ideas. Strategy, puzzles, mysteries, and worlds worth exploring.
       </p>
+      <nav class="cta-row" aria-label="Explore our games">
+        <a class="cta primary" href="#games">Play our games</a>
+        <a class="cta secondary" href="#coming-soon">Coming soon</a>
+      </nav>
     </section>
 
-    <section class="games-section">
-      <h2><span class="blink">></span> Our Games</h2>
+    <section class="games-section" id="games" aria-labelledby="games-heading">
+      <h2 id="games-heading"><span class="blink" aria-hidden="true">&gt;</span> Available Now</h2>
+      <p class="section-intro">Find your next favorite. Explore our games on Google Play.</p>
       <div class="game-cards">
-        <div class="game-card">
-          <span class="tag">Enchanted Fantasy</span>
-          <div class="game-hero"><div class="game-icon"><img src="assets/veilborn_app_icon.png" alt="Veilborn app icon"></div><div><h3>Veilborn</h3><div class="genre">Creature Collection / Idle RPG</div></div></div>
-          <p>Small companions. Extraordinary journeys. Hatch magical creatures, evolve a team and explore beyond the veil with turn-based battles and idle progression.</p>
-          <ul><li>Six elements and distinctive legendary companions</li><li>Turn-based combat with enemy intentions and tactical choices</li><li>Themed expeditions, daily quests and the Endless Spire</li></ul>
-          <p><a href="veilborn.html" class="cta secondary">Game information &amp; support</a> · <a href="veilborn-privacy.html">Privacy policy</a></p>
-        </div>
         <div class="game-card cyberpunk">
-          <span class="tag cyberpunk">Cyberpunk</span>
+          <div class="card-labels"><span class="tag cyberpunk">Cyberpunk</span><span class="status">Available now</span></div>
           <div class="game-hero">
             <div class="game-icon">
               <img src="assets/neon_21_app_icon.png" alt="Neon 21 app icon">
@@ -503,12 +520,12 @@
             <li>6 bosses that rewrite the rules of the game</li>
             <li>30+ enemies, branching maps, and seeded runs</li>
           </ul>
-          <p style="margin-top: 16px;">
-            <a href="https://play.google.com/store/apps/details?id=com.neon.blackjack.blackjack_roguelike" class="cta secondary" style="font-size: 8px; padding: 10px 16px; display: inline-block;">Google Play</a>
+          <p class="game-links">
+            <a href="https://play.google.com/store/apps/details?id=com.neon.blackjack.blackjack_roguelike" class="cta secondary">Google Play</a>
           </p>
         </div>
         <div class="game-card gothic">
-          <span class="tag gothic">Gothic Lo-Fi</span>
+          <div class="card-labels"><span class="tag gothic">Gothic Lo-Fi</span><span class="status">Available now</span></div>
           <div class="game-hero">
             <div class="game-icon">
               <img src="assets/cathedral_collapse_app_icon.png" alt="Cathedral Collapse app icon">
@@ -528,9 +545,74 @@
             <li>Puzzle, Endless, and Daily Challenge modes</li>
             <li>19 relics, 12 power pieces, and cascade chain reactions</li>
           </ul>
-          <p style="margin-top: 16px;">
-            <a href="https://play.google.com/store/apps/details?id=com.electronstudios.cathedralcollapse" class="cta secondary" style="font-size: 8px; padding: 10px 16px; display: inline-block;">Google Play</a>
+          <p class="game-links">
+            <a href="https://play.google.com/store/apps/details?id=com.electronstudios.cathedralcollapse" class="cta secondary">Google Play</a>
           </p>
+        </div>
+        <div class="game-card">
+          <div class="card-labels"><span class="tag">Chain Reactions</span><span class="status">Available now</span></div>
+          <div class="game-hero">
+            <div class="game-icon"><img src="assets/cascade_blast_app_icon.png" alt="Cascade Blast app icon" width="86" height="86" loading="lazy"></div>
+            <div><h3>Cascade Blast</h3><div class="genre">Block Puzzle / Arcade</div></div>
+          </div>
+          <p>Set up the board, clear a row, and let gravity do the rest. Falling blocks turn clever placements into satisfying chains of cascading combos.</p>
+          <ul>
+            <li>Gravity-driven clears on an 8&times;8 board</li>
+            <li>Endless runs, daily challenges, and quests</li>
+            <li>Power-ups and unlockable board cosmetics</li>
+          </ul>
+          <p class="game-links"><a href="https://play.google.com/store/apps/details?id=com.electronstudios.cascadeblast" class="cta secondary" aria-label="Get Cascade Blast on Google Play">Google Play</a></p>
+        </div>
+        <div class="game-card">
+          <div class="card-labels"><span class="tag">Mystery</span><span class="status">Available now</span></div>
+          <div class="game-hero">
+            <div class="game-icon"><img src="assets/casebook_app_icon.png" alt="The Casebook: Detective Puzzle app icon" width="86" height="86" loading="lazy"></div>
+            <div><h3>The Casebook: Detective Puzzle</h3><div class="genre">Detective / Logic Puzzle</div></div>
+          </div>
+          <p>Open a case file and follow the evidence. Explore crime scenes, question suspects, and solve self-contained murder mysteries one deduction at a time.</p>
+          <ul>
+            <li>Bite-sized cases for 15&ndash;30 minute sessions</li>
+            <li>Evidence-led puzzles and suspect interviews</li>
+            <li>One final accusation. Make it count.</li>
+          </ul>
+          <p class="game-links"><a href="https://play.google.com/store/apps/details?id=com.electronstudios.casebook" class="cta secondary" aria-label="Get The Casebook: Detective Puzzle on Google Play">Google Play</a></p>
+        </div>
+        <div class="game-card">
+          <div class="card-labels"><span class="tag">Colorful Strategy</span><span class="status">Available now</span></div>
+          <div class="game-hero">
+            <div class="game-icon"><img src="assets/color_merge_app_icon.png" alt="Color Merge app icon" width="86" height="86" loading="lazy"></div>
+            <div><h3>Color Merge</h3><div class="genre">Merge / Puzzle</div></div>
+          </div>
+          <p>Swipe matching colors together and discover the next shade. Plan ahead, build combos, and chase your best score across glowing puzzle boards.</p>
+          <ul>
+            <li>Classic swipe puzzles and a hex mode</li>
+            <li>Track your discoveries in the Merge Diary</li>
+            <li>Power-ups, achievements, and board themes</li>
+          </ul>
+          <p class="game-links"><a href="https://play.google.com/store/apps/details?id=com.electronstudios.colormerge" class="cta secondary" aria-label="Get Color Merge on Google Play">Google Play</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="games-section" id="coming-soon" aria-labelledby="coming-soon-heading">
+      <h2 id="coming-soon-heading">Coming Soon</h2>
+      <p class="section-intro">A new world is taking shape beyond the veil.</p>
+      <div class="game-cards upcoming-games">
+        <div class="game-card gothic">
+          <div class="card-labels"><span class="tag gothic">Enchanted Fantasy</span><span class="status upcoming">Coming soon</span></div>
+          <div class="game-hero">
+            <div class="game-icon"><img src="assets/veilborn_app_icon.png" alt="Veilborn fire companion icon" width="86" height="86" loading="lazy"></div>
+            <div><h3>Veilborn</h3><div class="genre">Creature Collection / Idle RPG</div></div>
+          </div>
+          <p>Small companions. Extraordinary journeys. Hatch magical creatures, evolve a team, and explore beyond the veil with turn-based battles and idle progression.</p>
+          <ul>
+            <li>Six elements and distinctive legendary companions</li>
+            <li>Tactical battles with visible enemy intentions</li>
+            <li>Themed expeditions and the Endless Spire</li>
+          </ul>
+          <p class="release-note">Currently in testing for Android and iOS. Release date to be announced.</p>
+          <p class="game-links"><a href="veilborn.html" class="cta secondary">Game info &amp; support</a></p>
+          <a class="text-link" href="veilborn-privacy.html">Veilborn privacy policy</a>
         </div>
       </div>
     </section>
@@ -550,7 +632,7 @@
       </div>
       <div class="panel">
         <h3>Community</h3>
-        <p>Updates posted here as releases approach. All games are free-to-play with no paywalls.</p>
+        <p>Discover our latest releases on Google Play and check back here for upcoming games and new adventures.</p>
       </div>
     </section>
 
@@ -568,6 +650,8 @@
     (function () {
       const canvas = document.getElementById("pixelstars");
       const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       let width, height, stars;
       const PIXEL = 3;
 
@@ -609,7 +693,7 @@
           ctx.fillStyle = `rgba(${s.color[0]},${s.color[1]},${s.color[2]},${s.alpha})`;
           ctx.fillRect(s.x, s.y, PIXEL, PIXEL);
         }
-        requestAnimationFrame(draw);
+        if (!reducedMotion.matches) requestAnimationFrame(draw);
       }
 
       window.addEventListener("resize", resize);
