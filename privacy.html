@@ -144,232 +144,82 @@
       padding-top: 16px;
       border-top: 3px solid var(--border);
     }
+    .table-scroll { overflow-x: auto; margin-top: 16px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.7; }
+    th, td { border: 1px solid var(--border); padding: 12px; text-align: left; vertical-align: top; }
+    th { color: var(--yellow); }
+    th:first-child { min-width: 135px; }
+    td { min-width: 220px; }
+    h2 { line-height: 1.8; }
+    .policy-nav { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; font-size: 13px; line-height: 1.8; }
+    a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <main class="wrap">
     <header>
       <a href="index.html">&lt; Back to Home</a>
       <h1>Privacy Policy</h1>
-      <div class="date">Effective date: April 7, 2026 &bull; Embertable details updated October 8, 2026</div>
+      <div class="date">Updated: October 10, 2026</div>
+      <nav class="policy-nav" aria-label="Privacy policy sections"><a href="#games">Your game</a><a href="#data">Data and services</a><a href="#choices">Choices and requests</a><a href="veilborn-privacy.html">Veilborn</a><a href="witchmark-privacy.html">Witchmark</a></nav>
     </header>
-
-    <div class="card" id="witchmark">
-      <h2>Witchmark</h2>
-      <p>Witchmark has its own <a href="witchmark-privacy.html">privacy policy</a>, covering local saves and the planned Firebase Analytics, Crashlytics and Google AdMob launch configuration. Witchmark is intended for adults aged 18 and over, with no player accounts or cloud saves. Its dedicated policy takes precedence over the general descriptions below.</p>
-    </div>
-
-    <div class="card">
-      <h2>Veilborn</h2>
-      <p>Veilborn has its own <a href="veilborn-privacy.html">privacy policy</a>. The advertising, attribution and session-replay descriptions below apply to our other games. Veilborn’s use of Firebase Analytics and Crashlytics is described in its dedicated policy.</p>
-    </div>
-
-    <div class="card" id="embertable">
-      <h2>Embertable (iOS and Android)</h2>
-      <p>Embertable is covered by this policy. This game-specific section describes its current data practices and takes precedence over the general descriptions below where they differ.</p>
-      <p>Company progress, characters, equipment, settings, daily rewards and purchase entitlements are stored on your device. Embertable does not require a player account and does not currently provide a studio-operated cloud save service. Starting a new journey resets gameplay progress; reinstalling or clearing app data may remove local data.</p>
-      <p>Embertable uses Google AdMob and Google's User Messaging Platform for optional rewarded ads and privacy choices. These services may process IP addresses, device and advertising identifiers where available and permitted, ad interactions, diagnostics and consent choices to deliver and measure ads and prevent fraud. Consent is requested where required before ads are requested. You can revisit available consent choices using the game's Ad privacy control. See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
-      <p>Rewarded ads are optional. A Forge Sigil is granted only when the advertising SDK confirms that the reward was earned. Gameplay can be played offline; ads and store operations require a connection. Embertable does not currently integrate Firebase Analytics, TikTok attribution, Amplitude, session replay or a separate crash-reporting SDK.</p>
-      <p>When purchases are enabled, Apple or Google processes payment information. To validate a purchase or restore, Embertable sends the product identifier, store source and store receipt or purchase token to our HTTPS verification service. The service checks these with the relevant store, and the app stores transaction identifiers and entitlements to prevent duplicate rewards. These records do not include your payment-card details. Purchase data is used for verification, delivery and support, not advertising profiles.</p>
-      <p>Embertable does not request camera, microphone, contacts or precise-location access. Internet access is used for ads, privacy messages and purchase verification. Questions about Embertable data or privacy requests can be sent to <a href="mailto:electron.cyber.secure@gmail.com">electron.cyber.secure@gmail.com</a>.</p>
-    </div>
-
-    <div class="card">
-      <h2>Overview</h2>
-      <p>
-        This Privacy Policy explains how Electron Game Studios ("we", "us", or "our")
-        handles information when you use our mobile games (the "Apps").
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Information We Collect</h2>
-      <p>We do not require you to create an account or provide personal information to play.</p>
-      <p>Game progress and settings are stored locally on your device. We do not collect your name, email address, or other directly identifying information.</p>
-      <p>Our Apps use analytics, session replay, and advertising SDKs that automatically collect certain device and usage data (see Analytics and Advertising sections below).</p>
-    </div>
-
-    <div class="card">
-      <h2>Advertising (AdMob)</h2>
-      <p>
-        We use Google AdMob to serve ads. AdMob and its partners may collect information
-        such as device identifiers, approximate location, and app activity to provide
-        personalized ads, measure performance, and prevent fraud.
-      </p>
-      <p>
-        By default, our Apps serve personalized ads. If you are in a region that requires
-        consent (such as the EEA/UK), we will request your consent before serving personalized
-        ads or using cookies/identifiers as required by law. You may also limit ad
-        personalization through your device settings.
-      </p>
-      <p>
-        Some Apps offer a one-time "Remove Ads" purchase that disables all advertising.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>In-App Purchases</h2>
-      <p>
-        Some of our Apps offer in-app purchases through Google Play Billing (Android) or
-        the App Store (iOS). Purchase transactions are processed entirely by the platform
-        provider (Google or Apple). We do not collect or store your payment information.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Device Permissions</h2>
-      <p>
-        Our Apps may request the following device permissions:
-      </p>
-      <p>
-        <strong>Camera</strong> &mdash; Used solely to scan QR codes for sharing game content
-        (such as custom board layouts). Camera data is processed
-        on-device and is never recorded, stored, or transmitted.
-      </p>
-      <p>
-        <strong>Internet</strong> &mdash; Required for serving ads, processing in-app purchases, and sending analytics data.
-      </p>
-      <p>
-        <strong>Notifications</strong> &mdash; Some Apps may request permission to send local
-        notifications (such as daily streak reminders). Notifications are opt-in only and can
-        be enabled or disabled at any time in the App's settings. We do not send push
-        notifications from a remote server.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Third-Party Services</h2>
-      <p>Our Apps use the following third-party services that may process data:</p>
-      <p>
-        <strong>Google AdMob</strong> &mdash; Advertising (see Advertising section above).
-      </p>
-      <p>
-        <strong>Google Play Billing / Apple App Store</strong> &mdash; In-app purchase processing.
-      </p>
-      <p>
-        <strong>TikTok for Business (App Events SDK)</strong> &mdash; Used to measure whether
-        advertising campaigns lead to app installs. The SDK may collect device identifiers
-        (such as the Google Advertising ID), app activity (install, launch, and retention
-        events), and approximate location derived from your IP address. This data is sent to
-        TikTok/ByteDance for advertising attribution and campaign measurement.
-        See <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en">TikTok's Privacy Policy</a>.
-      </p>
-      <p>
-        <strong>Google Firebase Analytics</strong> &mdash; Used to understand how players interact
-        with the Apps, measure retention, and improve the gameplay experience. Firebase Analytics
-        may collect device identifiers, app activity (such as session starts, gameplay events,
-        and feature usage), and approximate location derived from your IP address. This data is
-        sent to Google and processed in accordance with
-        <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
-      </p>
-      <p>
-        <strong>Amplitude</strong> &mdash; Used for product analytics to understand how players
-        interact with the Apps, measure feature adoption, and improve the gameplay experience.
-        Amplitude may collect device identifiers, app activity (such as session data, gameplay
-        events, and feature usage), and approximate location derived from your IP address.
-        This data is sent to Amplitude and processed in accordance with
-        <a href="https://amplitude.com/privacy">Amplitude's Privacy Policy</a>.
-        We may also use Amplitude's <strong>Session Replay</strong> feature, which records visual
-        replays of user sessions (including screen interactions, taps, and navigation patterns)
-        to help us identify usability issues and improve the Apps. Session replays do not capture
-        text you type into input fields, passwords, or other sensitive on-screen content.
-      </p>
-      <p>
-        <strong>Google Fonts</strong> &mdash; Some Apps download font files from Google servers
-        at runtime. This may share your device's IP address with Google.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Analytics and Crash Reporting</h2>
-      <p>
-        We use <strong>Google Firebase Analytics</strong> to understand how players use the Apps
-        and to improve the gameplay experience. Firebase Analytics collects anonymous usage data
-        such as session frequency, feature usage, gameplay events (for example, runs started,
-        runs completed, and in-game purchases), and retention metrics (such as whether a player
-        returns on day 1, day 7, or day 30 after installing). We also set anonymous user
-        properties (such as player level and total runs completed) to help us understand
-        aggregate player progression. This data is not linked to your identity and is used
-        solely for product improvement and aggregate reporting.
-      </p>
-      <p>
-        We use <strong>TikTok's App Events SDK</strong> to measure advertising effectiveness
-        (for example, whether a TikTok ad led to an app install). This SDK automatically tracks
-        install, launch, and retention events. We do not use it to build user profiles or track
-        in-app behaviour beyond these standard attribution events.
-      </p>
-      <p>
-        We use <strong>Amplitude</strong> for product analytics to track gameplay events,
-        feature usage, and user flows. We may also use Amplitude's <strong>Session Replay</strong>
-        feature, which records visual replays of user sessions (screen interactions, taps, and
-        navigation) to help us diagnose usability issues and improve the Apps. Session replays
-        do not capture text typed into input fields, passwords, or other sensitive content.
-      </p>
-      <p>
-        We do not currently use crash reporting SDKs. If we add additional analytics or crash
-        reporting in the future, we will update this policy and our store disclosures before
-        the change takes effect.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Data Sharing</h2>
-      <p>
-        We do not sell your personal information. We may share limited data with ad partners
-        and platform providers to serve ads, process purchases, measure performance, and
-        maintain the safety and integrity of the Apps.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>International Data Transfers</h2>
-      <p>
-        Our third-party service providers, including Google (for AdMob, Firebase Analytics, Play Billing, and Fonts),
-        TikTok/ByteDance (for advertising attribution), and Amplitude (for product analytics and session replay),
-        may process data in countries outside your country of residence, including the United States,
-        Singapore, and other jurisdictions where these providers operate data centres. By using the Apps, you acknowledge
-        that your information may be transferred to and processed in these countries, which may have
-        different data protection laws than your own jurisdiction.
-      </p>
-      <p>
-        Where required by applicable law (such as the GDPR for EEA/UK users), these transfers are
-        subject to appropriate safeguards, including Google's data processing terms and standard
-        contractual clauses.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Children</h2>
-      <p>
-        Our Apps are not directed to children under the age of 13. We do not knowingly collect
-        personal information from children. If you believe a child has provided us with
-        personal information, please contact us and we will take appropriate steps to delete
-        such information.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Your Choices</h2>
-      <p>
-        You can limit ad tracking or reset your device advertising ID in your device settings.
-        Where available, you can purchase an ad-free option within the App to disable all
-        advertising. You can also uninstall the App at any time, which removes all locally
-        stored data.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Contact Us</h2>
-      <p>
-        If you have questions about this Privacy Policy, contact us at
-        <a href="mailto:electron.cyber.secure@gmail.com">electron.cyber.secure@gmail.com</a>.
-      </p>
-    </div>
-
-    <div class="footer-note">
-      This policy may be updated from time to time. We will post changes on this page.
-      &bull; <a href="tos.html">Terms of Service</a>
-    </div>
-  </div>
+    <section class="card">
+      <h2>Scope</h2>
+      <p>This policy explains how Electron Game Studios (ElectronGameStudios on Google Play; “we”, “us”, “our”) handles information in our games and on this website. It covers Neon 21: Blackjack Roguelike, Cathedral Collapse, Cascade Blast, Color Merge, The Casebook: Detective Puzzle, Veilborn, Witchmark, Embertable, ShipRekt, Human Resources (also developed as Mob Boss HR Simulator), and Short Circuit: Voltage Puzzle.</p><p>Services vary by game, version, platform and release configuration. Development and testing versions may have different features or integrations from released versions. The game-specific descriptions below identify those differences. The dedicated <a href="veilborn-privacy.html">Veilborn</a> and <a href="witchmark-privacy.html">Witchmark</a> policies take precedence for those games. The general sections explain the services used where applicable; they do not mean every game uses every service.</p>
+    </section>
+    <section class="card" id="games">
+      <h2>Privacy by game</h2>
+      <p>Find your game below. “Local” means stored on your device; operating-system or browser backups are separate. On a small screen, scroll the table sideways to see all columns.</p><div class="table-scroll" role="region" aria-label="Game privacy comparison" tabindex="0"><table><caption>Game-specific services and storage</caption><thead><tr><th scope="col">Game</th><th scope="col">Services and features</th><th scope="col">Saves and purchases</th></tr></thead><tbody><tr><th scope="row">Neon 21: Blackjack Roguelike</th><td>Firebase Analytics, Crashlytics and Performance Monitoring; Amplitude analytics; Android TikTok advertising attribution; optional AdMob rewarded ads. Local reminders and platform age/access checks.</td><td>Local saves and purchase entitlements. Store billing for chips, content and permanent benefits. No studio player account or cloud-save service.</td></tr><tr><th scope="row">Cathedral Collapse</th><td>Firebase Analytics, Crashlytics and Performance Monitoring; Amplitude analytics; AdMob ads and local reminders. TikTok attribution in builds configured for it. Country lookup using SIM/locale information and ipapi.co. Optional camera QR scanning.</td><td>Local saves and shared board codes. Current implementation has no active store purchase flow or studio player account/cloud saves.</td></tr><tr><th scope="row">Cascade Blast</th><td>Firebase Analytics, Crashlytics and AdMob rewarded/interstitial ads; optional local reminders. Google Play age/access checks where available.</td><td>Local saves and entitlements; store billing. Remove Ads removes interstitial ads; optional rewarded ads remain available.</td></tr><tr><th scope="row">Color Merge</th><td>Firebase Analytics and AdMob rewarded/interstitial ads. Google Fonts may download fonts. No active TikTok, Crashlytics, Amplitude or session replay integration.</td><td>Local saves and entitlements; store billing. Remove Ads removes interstitial ads; optional rewarded ads remain available.</td></tr><tr><th scope="row">The Casebook: Detective Puzzle</th><td>Firebase Analytics, Crashlytics, Remote Config and AdMob rewarded ads for hints or cooldown skips. Google Fonts may download fonts.</td><td>Local progress and profile. The current development purchase flow simulates case-pack unlocks; it does not charge through a store. Store purchase data is processed only in versions that enable real billing.</td></tr><tr><th scope="row">Veilborn</th><td>Firebase Analytics/Crashlytics, optional AdMob rewarded ads, platform age/approval signals and iOS tracking permission, subject to the controls in its <a href="veilborn-privacy.html">dedicated policy</a>.</td><td>Local saves; store billing and transaction records. No studio player account/cloud-save service. Platform approval records may use Apple iCloud, as explained in the dedicated policy.</td></tr><tr><th scope="row">Witchmark</th><td>Current prototype: local gameplay, with no active advertising, analytics or crash-reporting SDKs. See its <a href="witchmark-privacy.html">dedicated policy</a>.</td><td>Local saves, collections and simulated currency/readings. Real-money purchases are not enabled in the current prototype.</td></tr><tr><th scope="row">Embertable</th><td>AdMob optional rewarded ads and Google consent messaging. No current Firebase, TikTok, Amplitude, session replay or separate crash-reporting SDK.</td><td>Local saves. Store billing and HTTPS receipt verification only in releases configured to enable real purchases. Details <a href="#embertable">below</a>.</td></tr><tr><th scope="row">ShipRekt; Human Resources; Short Circuit: Voltage Puzzle</th><td>Current development versions: no active advertising, analytics, crash-reporting or store-billing integration. Some Short Circuit versions may download Google Fonts.</td><td>Progress and settings saved locally. No studio player account/cloud saves in these versions.</td></tr></tbody></table></div>
+    </section>
+    <section class="card">
+      <h2>Local progress and information you provide</h2>
+      <p>Our current games do not require a studio player account. Progress, settings, collections, locally chosen profile details and purchase-delivery records are stored on your device. Platform backup services may retain copies according to your settings. Clearing app data or uninstalling may remove progress; it does not delete data already processed by advertising, analytics, store or support providers.</p><p>If you email support, we receive your email address and the information you send, such as device details, screenshots and order references. We use it to respond and investigate problems. Do not send passwords, payment-card details or full purchase receipts. Locally entered profile text is not a request to create an online account.</p>
+    </section>
+    <section class="card" id="data">
+      <h2>Analytics, diagnostics and remote settings</h2>
+      <p>In games identified above, Google Analytics for Firebase and Amplitude process app-instance or device identifiers, app and device information, session and gameplay events, progression and purchase-event information. Network information can reveal approximate location. We use these services to understand play, improve games and measure retention. These records are pseudonymous and may be personal data; they are not necessarily anonymous.</p><p>Firebase Crashlytics processes installation identifiers, device/operating-system details, app versions, crash stack traces, error messages, diagnostic keys and, where enabled, recent analytics events. Firebase Performance Monitoring measures app performance and network-request diagnostics. The Casebook uses Firebase Remote Config to retrieve game settings; Google processes installation information to deliver those settings. These services are not cloud saves.</p><p>We do not currently enable visual session replay in the games listed here. Amplitude event analytics does not itself mean that recordings of your screen are collected. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>, <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a> and <a href="https://amplitude.com/privacy">Amplitude’s Privacy Policy</a>.</p>
+    </section>
+    <section class="card">
+      <h2>Advertising and attribution</h2>
+      <p>Games listed with AdMob may display interstitial or optional rewarded ads. Google and its advertising partners may process IP addresses, approximate location, device and advertising identifiers where available and permitted, app/ad interactions and diagnostics for ad delivery, measurement and fraud prevention. Personalization and identifier access depend on platform settings, applicable consent choices and the game version. Declining personalization does not prevent all advertising-related processing.</p><p>Neon 21 uses TikTok attribution on Android; Cathedral Collapse uses it in configured builds. These integrations can send device/advertising identifiers and install, app-use, retention and conversion events, including purchase events where implemented, to TikTok/ByteDance to measure campaigns. Color Merge’s current version does not enable TikTok SDK tracking. See <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en">TikTok’s Privacy Policy</a>.</p><p>Neon 21, Veilborn and Embertable provide Google consent messaging and available ad privacy options. Other games may offer different controls; this policy does not promise that every game has an in-app consent switch. Use the controls actually offered in your version and your device’s privacy settings. Accepting these Terms or reading this policy is not itself advertising or tracking consent.</p><p>A Remove Ads purchase in Cascade Blast or Color Merge suppresses interstitial ads. Optional rewarded ads remain available if you choose them. Removing ads does not automatically disable analytics or other services. Reward availability depends on connectivity, eligibility and ad supply.</p>
+    </section>
+    <section class="card">
+      <h2>Purchases and verification</h2>
+      <p>Where real purchases are enabled, Apple or Google handles payment details under its own terms and privacy policy. We do not receive payment-card details. The app receives product identifiers, transaction identifiers, purchase status and receipts or tokens to deliver content, restore eligible purchases and prevent duplicate grants. Analytics-enabled games may also report purchase-event details such as product and price.</p><p>The current Neon 21, Cascade Blast and Color Merge implementations handle store transactions without a separate studio receipt-verification server. Cathedral Collapse has no active purchase flow in the current implementation. The Casebook and Witchmark development purchase flows are simulations; they do not establish that real-money billing is enabled in a released version. Veilborn and Embertable verification behavior is described in their game-specific sections.</p><p>Store transaction records may be retained by Apple or Google independently of local data. See <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a> and <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.</p>
+    </section>
+    <section class="card">
+      <h2>Country, permissions and age information</h2>
+      <p>Cathedral Collapse resolves a country using available SIM/locale information and a request to ipapi.co. The request exposes your IP address and ordinary network-request information to that provider; the game reads the returned country code. This does not require GPS access. See <a href="https://ipapi.co/privacy/">ipapi’s Privacy Policy</a>.</p><p>Cathedral Collapse can request camera access when you choose to scan a shared board QR code. Decoding occurs on your device; the game does not upload camera images to us. You can use the manual board-code option instead. Sharing a code sends the content to the recipient or service you choose.</p><p>Neon 21, Cathedral Collapse and Cascade Blast offer optional local reminders using device notification permission. These are not studio-server push messages. Android versions may also request scheduling/boot permissions so reminders can work. Other games do not necessarily implement notifications even if they display reminder settings.</p><p>Neon 21 and Cascade Blast use available platform age-category and approval information to determine access. They do not require an exact birth date to be entered into the game or forward those age signals to analytics. Veilborn’s age and parental-approval handling is described in its dedicated policy. Store age checks are distinct from a game’s content rating.</p>
+    </section>
+    <section class="card" id="embertable">
+      <h2>Embertable</h2>
+      <p>Embertable stores company progress, characters, equipment, settings, rewards and entitlements locally, without a studio player account or cloud-save service. It uses AdMob and Google’s User Messaging Platform for optional rewarded ads and privacy choices. These services may process identifiers, IP addresses, ad interactions, diagnostics and consent choices. Its Ad privacy control lets you revisit choices where available.</p><p>Embertable has no current Firebase Analytics, TikTok, Amplitude, session replay or separate crash-reporting SDK. In releases configured to enable real purchases, the app sends the product identifier, store source and receipt or purchase token to our HTTPS verification service. The service checks them with the store; local transaction records and entitlements prevent duplicate rewards. Pending verification records can include receipts stored locally. Purchases remain unavailable when the required verification service is not configured.</p><p>It does not request camera, microphone, contacts or precise-location access. Optional rewarded ads grant the displayed benefit only after completion is confirmed. The general analytics descriptions above do not apply to Embertable’s current configuration.</p>
+    </section>
+    <section class="card">
+      <h2>Fonts, website and external links</h2>
+      <p>Color Merge, The Casebook and some Short Circuit builds may download font files from Google Fonts, which exposes the request’s IP address and network information to Google. Neon 21 currently bundles fonts and disables runtime font downloads.</p><p>This website is hosted on GitHub Pages and loads Google Fonts on pages that reference them. Hosting and font providers receive ordinary web-request information, including IP address and browser details. We do not currently add studio analytics, ad SDKs or session replay to this website. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s Privacy Statement</a>. Following a store or other external link brings you under that provider’s policies.</p>
+    </section>
+    <section class="card">
+      <h2>Use, sharing and international processing</h2>
+      <p>We use information to operate and improve games, deliver purchases and chosen rewards, diagnose faults, measure advertising, answer support requests and meet legal obligations. Depending on the processing and applicable law, we rely on consent, providing requested services, legitimate interests where permitted, or legal obligations. You can withdraw consent where it is the basis for processing.</p><p>We disclose information to the service providers described for your game, and where needed to comply with law, protect rights or handle a business transfer subject to applicable safeguards. We do not sell player data for money. Advertising disclosures may qualify as sharing for targeted advertising under some laws; applicable controls depend on the game, provider, region and device.</p><p>Providers may process data outside your country. Where required, appropriate transfer safeguards apply, such as provider data-processing terms and standard contractual clauses. Using an app does not waive your privacy rights.</p>
+    </section>
+    <section class="card">
+      <h2>Retention and security</h2>
+      <p>Local records remain until removed, overwritten or affected by backups. We retain support correspondence while needed to resolve requests and meet legal obligations. Purchase records may be retained for delivery, fraud prevention, accounting and legal requirements.</p><p>Analytics retention follows the relevant property/service configuration; diagnostic and advertising data follows provider practices and applicable settings. Google documents Crashlytics, Performance Monitoring and Remote Config retention in its <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>. We do not claim that uninstalling erases provider records. We use reasonable safeguards, but cannot guarantee absolute security.</p>
+    </section>
+    <section class="card" id="choices">
+      <h2>Your choices and privacy requests</h2>
+      <p>You can decline optional rewarded ads and purchases, deny optional camera/notification permissions, adjust device advertising and tracking controls, and use available in-app ad privacy controls. These choices affect different services; no universal analytics opt-out is currently offered across every game. Uninstalling stops future collection from that installation but does not itself erase historical records.</p><p>Depending on your location, you may request access, correction, deletion, restriction or portability of personal information, object to certain processing, withdraw consent, or complain to your privacy regulator. Contact <a href="mailto:electron.cyber.secure@gmail.com?subject=Privacy%20request">electron.cyber.secure@gmail.com</a> and name the game and request. We may need limited information to verify and locate records. Because games do not use studio accounts, we may be unable to match an installation identifier to an email address. Some records must be retained by law; store and advertising providers also offer their own privacy controls.</p>
+    </section>
+    <section class="card">
+      <h2>Younger players</h2>
+      <p>Our games covered by the shared audience policy are intended for teens and adults, not directed to children under 13. Witchmark’s intended audience is 13+, not adults-only. Follow the store rating, platform access decisions and applicable local requirements; these can differ by region and game. A low store content rating does not by itself mean a game is directed to children.</p><p>Where a platform supplies age or parental-approval signals, handling varies by game as described above. We do not claim that every game includes an age-verification service. If you believe a child has provided personal information, contact us so we can investigate and address it.</p>
+    </section>
+    <section class="card">
+      <h2>Changes and contact</h2>
+      <p>Questions and privacy requests: <a href="mailto:electron.cyber.secure@gmail.com">electron.cyber.secure@gmail.com</a>. We will update this policy when services or data practices change and provide additional notice or obtain consent where required.</p>
+    </section>
+    <div class="footer-note">© 2026 Electron Game Studios &bull; <a href="tos.html">Terms of Service</a></div>
+  </main>
 </body>
 </html>
